@@ -1,0 +1,12 @@
+from rembg import remove
+from PIL import Image
+from google.colab.patches import cv2_imshow
+import cv2
+input_path = '20231030_164808 (1).png'
+output_path = 'output.png'
+input = Image.open(input_path)
+output = remove(input)
+output.save(output_path)
+
+img = cv2.imread('output.png')
+cv2_imshow(img)
